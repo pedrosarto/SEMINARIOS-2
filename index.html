@@ -1,0 +1,103 @@
+<html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            background-color: rgb(0, 60, 128);
+            color: aliceblue;
+        }
+
+        h1 {
+            color: rgb(255, 115, 115);
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        button {
+            color: rgb(240, 6, 201);
+            margin: auto;
+            height: 30px;
+            background-color: rgb(217, 217, 253);
+            border: 8px;
+            border-radius: 5px;
+        }
+
+        .centro {
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+
+            table,
+            tr,
+            td {
+                border: 1px solid brown;
+            }
+        }
+    </style>
+
+    <h1>Meu formulário</h1>
+
+    <button onclick="aumentarNumero()">Mais um</button>
+    <label id="label">Contador: 0</label><br><br><br><br>
+    <script>
+        let contador = 0;
+
+        function aumentarNumero() {
+            const label = document.getElementById("label")
+            contador++;
+            label.innerText = 'Contador: ' + contador
+        }
+    </script>
+
+    <div class="input">
+        <label>Nome: </label><input type="text" id="nome"> </label>
+
+        <label>Idade: <input type="number" id="idade"></label>
+
+        <div class="button">
+            <button onclick="adicionar()" class="button" id="idade">Adicionar</button>
+        </div>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pedro</td>
+                <td>18</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script>
+        function adicionar() {
+            const nome = document.querySelector("#nome")
+            const idade = document.querySelector("#idade")
+            const tbody = document.querySelector("tbody")
+            tbody.innerHTML += `<tr>
+                <td>${nome.value}</td>
+                <td>${idade.value}</td>
+                <td></td>
+            </tr>`
+            console.log(nome.value)
+        }
+        </script>
+
+</body>
+
+</html>
